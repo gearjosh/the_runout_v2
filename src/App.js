@@ -20,7 +20,7 @@ class App extends Component {
   render() {
     console.log("props: ", this.props);
     return (
-      <div classname="App">
+      <div className="App">
         <Header />
         <Routes>
           <Route path="/" element={<Homepage />} />

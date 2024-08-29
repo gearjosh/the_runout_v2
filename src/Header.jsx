@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
 
 import Logo from './Logo';
 import MagnifyingGlass from './MagnifyingGlass'
@@ -8,7 +7,7 @@ import MagnifyingGlass from './MagnifyingGlass'
 import './styles/Header.scss';
 
 function Header(props) {
-  let _searchTerm;
+  let _searchTerm = '';
 
   // function handleNewAlbumSearch(event) {
   //   const { dispatch } = props;
