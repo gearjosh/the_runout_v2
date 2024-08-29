@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { connect } from "react-redux";
 
 import Header from "./Header";
@@ -40,12 +40,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-const withRouter = (Component) => {
-  const Wrapper = (props) => {
-    const history = useNavigate();
-    return <Component history={history} {...props} />;
-  };
-  return Wrapper;
-};
-
-export default withRouter(connect(mapStateToProps)(App));
+export default connect(mapStateToProps)(App);

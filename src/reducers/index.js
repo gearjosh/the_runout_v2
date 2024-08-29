@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from "@reduxjs/toolkit";
 import selectedAlbumReducer from './selectedAlbumReducer';
 import listenLogReducer from './listenLogReducer';
 
