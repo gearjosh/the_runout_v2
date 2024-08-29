@@ -1,0 +1,50 @@
+@import 'variables';
+@import 'mixins';
+
+.albumDetail {
+  padding-top: 6rem;
+}
+
+.albumDetailHead {
+  padding: .5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  img {
+    width: 25vw;
+  }
+  h1 {
+    color: $white;
+    font-family: 'Uberlin Bold';
+  }
+  h2, h3 {
+    color: $lightGray;
+  }
+}
+
+.detailHeadElement {
+  width: auto;
+  min-width: 20vw;
+  margin: 0 1rem;
+}
+
+.genreTag {
+  background-color: $darkGreen;
+  // background-color: $green;
+  border-radius: .25rem;
+  padding: .5rem;
+  padding-bottom: .25rem;
+  font-family: 'Berlin Bold';
+  font-size: .75rem;
+  line-height: .5rem;
+  color: $lightBlack;
+  margin-right: 1rem;
+}
+
+.albumDetailBody {
+  padding: .5rem;
+  h3 {
+    color: $lightGray;
+  }
+}

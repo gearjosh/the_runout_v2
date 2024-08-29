@@ -1,0 +1,96 @@
+@import 'variables';
+@import 'mixins';
+
+input {
+  display: inline-block;
+  border: 0;
+  border-radius: 2rem 0 0 2rem;
+  box-shadow: none;
+  height: 2.25rem;
+  width: 14.25rem;
+  padding: 0;
+  padding-right: 1rem;
+  text-align: right;
+  margin-right: 0;
+  color: $lightBlack;
+  &:focus {
+    outline: 0;
+  }
+  &::placeholder {
+    color: $gray;
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: 0 .25rem .5rem $black;
+  z-index: 10;
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 4rem;
+  padding: .5rem;
+  background: $gradientBlackSmall;
+  p {
+    @include allCapsGrayOnBlack;
+  }
+}
+
+.bottomBar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 2rem;
+  padding-left: 7.5rem;
+  background-color: $orange;
+  a {
+    @include headerLinks;
+  }
+}
+
+.search {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.magnifierSpace {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0;
+  height: 2.25rem;
+  width: 2.25rem;
+  background-color: $blue;
+  border: 0;
+  border-radius: 0 2rem 2rem 0;
+  text-decoration: none;
+  cursor: pointer;
+  &:focus {
+    outline: 0;
+  }
+  &:hover {
+    background-color: darken($blue, 10%);
+  }
+  &:active {
+    transform: scale(1.1);
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+@media screen and (max-width: 60rem){
+  #because {
+    display: none;
+  }
+}
