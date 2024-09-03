@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 import cauldron from './img/cauldron.jpg';
 

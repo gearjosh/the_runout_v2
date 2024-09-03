@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 import AlbumCover from './AlbumCover';
 import AlbumCoreInfo from './AlbumCoreInfo';

@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 import profile_image from './img/profile_image.jpeg';
 

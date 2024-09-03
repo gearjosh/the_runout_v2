@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 import odyssey from './img/odyssey.jpg';
 

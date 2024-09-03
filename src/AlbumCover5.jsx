@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 import automated from './img/automated.jpg';
 

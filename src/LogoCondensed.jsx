@@ -1,5 +1,3 @@
-import React from 'react';
-
 // import './styles/Logo.scss';
 
 function LogoCondensed() {

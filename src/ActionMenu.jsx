@@ -1,4 +1,4 @@
-import React from 'react';
+
 import LogAlbumButton from './LogAlbumButton';
 import FirstListenButton from './FirstListenButton';
 

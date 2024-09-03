@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 import doomsday from './img/doomsday.jpg';
 

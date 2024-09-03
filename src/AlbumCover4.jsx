@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 import code from './img/code.jpg';
 

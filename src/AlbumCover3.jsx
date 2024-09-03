@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 import aboutTime from './img/about_time.jpg';
 
