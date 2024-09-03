@@ -8,7 +8,6 @@ import AlbumDetail from "./AlbumDetail";
 import ProfileContainer from "./ProfileContainer";
 import Homepage from "./Homepage";
 
-import "./styles/normalize.css";
 import "./styles/App.scss";
 
 class App extends Component {
@@ -23,7 +22,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <Routes>
-          <Route path="/" element={<Homepage />} />
+          <Route path="/" element={<Homepage listens={this.props.listens} />} />
           <Route path="/searchresults" element={<SearchResultsContainer />} />
           <Route path="/albumdetail" element={<AlbumDetail />} />
           <Route path="/profile" element={<ProfileContainer />} />

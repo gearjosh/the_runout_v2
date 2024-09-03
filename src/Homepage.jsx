@@ -3,6 +3,8 @@ import AlbumCover from './AlbumCover';
 import './styles/Homepage.scss';
 
 function Homepage(props) {
+  console.log('homepage props:', props);
+  
   if (props.listens) {
     return (
       <div className="albumGrid">
@@ -19,6 +21,10 @@ function Homepage(props) {
         })}
       </div>
     );
+  } else {
+    return (
+      <div className='albumGrid'><p>Loading...</p></div>
+    )
   }
 };
 
