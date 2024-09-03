@@ -3,18 +3,19 @@
 
 .albumGrid {
   display: grid;
-  padding: .5rem;
+  padding: .25rem;
   grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
   grid-auto-rows: 1fr;
   grid-auto-flow: dense;
-  grid-gap: .5rem;
+  grid-gap: .25rem;
   margin-top: 6rem;
   img {
     object-fit: cover;
     width: 100%;
     height: 100%;
     &:hover {
-      scale: 105%;
+      scale: 103%;
+      cursor: pointer;
     }
   }
 }

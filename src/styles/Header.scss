@@ -29,7 +29,7 @@ input {
   position: fixed;
   top: 0;
   width: 100%;
-  box-shadow: 0 .25rem .5rem $black;
+  box-shadow: 0 .125rem .25rem $black;
   z-index: 10;
 }
 
@@ -52,6 +52,21 @@ input {
   height: 2rem;
   padding-left: 7.5rem;
   background-color: $orange;
+  a {
+    @include headerLinks;
+  }
+}
+
+.lilBar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 4rem;
+  padding: .5rem;
+  background: $gradientBlackSmall;
+  p {
+    @include allCapsGrayOnBlack;
+  }
   a {
     @include headerLinks;
   }

@@ -1,11 +1,11 @@
-import React from 'react';
-
 import AlbumCoverWithInfo from './AlbumCoverWithInfo';
 
 import './styles/SearchResultsContainer.scss';
 
 function SearchResultsContainer(props) {
 
+  console.log('search results container props:', props);
+  
   //everything having to do with createSleepArray is for demo purposes only and needs to go. replace with real code that does real things
   // start here >
   if (props.listens) {
@@ -39,6 +39,12 @@ function SearchResultsContainer(props) {
           })}
         </div>
     );
+  } else {
+    return (
+      <div className='searchContainer'>
+        <p>Loading...</p>
+      </div>
+    )
   }
 };
 // < end here

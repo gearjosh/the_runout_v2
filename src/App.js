@@ -23,7 +23,7 @@ class App extends Component {
         <Header />
         <Routes>
           <Route path="/" element={<Homepage listens={this.props.listens} />} />
-          <Route path="/searchresults" element={<SearchResultsContainer />} />
+          <Route path="/searchresults" element={<SearchResultsContainer listens={this.props.listens} />} />
           <Route path="/albumdetail" element={<AlbumDetail selectedAlbum={this.props.selectedAlbum}
           listens={this.props.listens} />} />
           <Route path="/profile" element={<ProfileContainer />} />
