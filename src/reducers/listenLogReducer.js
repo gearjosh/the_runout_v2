@@ -1,6 +1,8 @@
 import constants from './../constants';
-const { c, initialState } = constants;
+const { initialState } = constants;
 
-export default (state = initialState.listens, action) => {
+const listenLogReducer = (state = initialState.listens, action) => {
   return state;
 };
+
+export default listenLogReducer;
