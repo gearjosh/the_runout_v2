@@ -1,4 +1,3 @@
-
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -7,7 +6,7 @@ import Logo from './Logo';
 import MagnifyingGlass from './MagnifyingGlass'
 
 import './styles/Header.scss';
-import { searchAlbums } from './actions';
+import { triggerAlbumSearch } from './actions';
 
 function Header(props) {
   const searchInputRef = useRef('')
@@ -16,7 +15,7 @@ function Header(props) {
     const { dispatch } = props;
     e.preventDefault();
     if (searchInputRef.current.value) {      
-      dispatch(searchAlbums(searchInputRef.current.value));
+      dispatch(triggerAlbumSearch(searchInputRef.current.value));
       searchInputRef.current.value = '';
     }
   }

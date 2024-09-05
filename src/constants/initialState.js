@@ -1,4 +1,5 @@
 export default {
+  isSearching: false,
   selectedAlbum: 55625,
   listens: {
     55625: {
