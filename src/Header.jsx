@@ -1,56 +1,27 @@
 
+import { useRef } from 'react';
 import { Link } from 'react-router-dom';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 
 import Logo from './Logo';
 import MagnifyingGlass from './MagnifyingGlass'
 
 import './styles/Header.scss';
+import { searchAlbums } from './actions';
 
 function Header(props) {
-  // eslint-disable-next-line
-  let _searchTerm;
+  const searchInputRef = useRef('')
 
-  // function handleNewAlbumSearch(event) {
-  //   const { dispatch } = props;
-  //   event.preventDefault();
-  //   dispatch(ACTION CREATOR GOES HERE())
-  // }
+  const handleNewAlbumSearch = (e) => {
+    const { dispatch } = props;
+    e.preventDefault();
+    if (searchInputRef.current.value) {      
+      dispatch(searchAlbums(searchInputRef.current.value));
+      searchInputRef.current.value = '';
+    }
+  }
+  
 
-  // const listenScrollEvent = (e) => {
-  //   if (window.scrollY > 10) {
-  //   } else {}
-  // return (
-  //   <div className="header">
-  //     <div className="lilBar">
-  //       <Link to="/">
-  //         <Logo />
-  //       </Link>
-  //       <Link to="/profile" replace>
-  //         Profile
-  //       </Link>
-  //       <Link to="#" replace>
-  //         People
-  //       </Link>
-  //       <Link to="#" replace>
-  //         Lists
-  //       </Link>
-  //       <form id="searchForm" className="search">
-  //         <input
-  //           placeholder="Search albums..."
-  //           ref={(input) => {
-  //             _searchTerm = input;
-  //           }}
-  //         />
-  //         <button type="submit" className="magnifierSpace">
-  //           <Link to="/searchresults">
-  //             <MagnifyingGlass id="magnifier" />
-  //           </Link>
-  //         </button>
-  //       </form>
-  //     </div>
-  //   </div>
-  // );
 
   return (
     <div className="header">
@@ -59,12 +30,10 @@ function Header(props) {
           <Logo />
         </Link>
         <p id="because">Every album deserves a listen.</p>
-        <form id="searchForm" className="search">
+        <form onSubmit={handleNewAlbumSearch} id="searchForm" className="search">
           <input
             placeholder="Search albums..."
-            ref={(input) => {
-              _searchTerm = input;
-            }}
+            ref={searchInputRef}
           />
           <button type="submit" className="magnifierSpace">
             <Link to="/searchresults">
@@ -88,4 +57,4 @@ function Header(props) {
   );
 };
 
-export default Header;
+export default connect()(Header);

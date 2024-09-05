@@ -8,8 +8,7 @@ export const selectAlbum = (idOfAlbum) => {
   };
 }
 
-// Search action needs to call the discogs api
-export const search = (searchTerm) => {
+export const searchAlbums = (searchTerm) => {
   return {
     type: c.SEARCH_ALBUMS,
     searchTerm: searchTerm
