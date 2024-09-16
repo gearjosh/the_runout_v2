@@ -1,4 +1,4 @@
-export const SELECT_ALBUM = 'SELECT_ALBUM';
+export const SELECT_ALBUM = 'select/album';
 export const TRIGGER_ALBUM_SEARCH = 'TRIGGER_ALBUM_SEARCH';
 export const SEARCHING_ALBUMS = "SEARCHING_ALBUMS";
 export const SEARCH_ALBUMS = "SEARCH_ALBUMS";

@@ -1,5 +1,6 @@
 export default {
   isSearching: false,
+  searchResults: null,
   selectedAlbum: 55625,
   listens: {
     55625: {

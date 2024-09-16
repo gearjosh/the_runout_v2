@@ -16,11 +16,22 @@ export const searchingAlbums = () => {
   }
 }
 
-// this needs to be fleshed out to call the discogs api
-export const searchAlbums = (searchTerm) => {
+export const searchAlbums = async (searchTerm) => {
   console.log('searchTerm: ', searchTerm)
-  return {
-    type: c.SEARCH_ALBUMS_SUCCESS
+  let result;
+  try {
+    result = await fetch(`https://api.discogs.com/database/search?key=${process.env.DISCOGS_KEY}&secret=${process.env.DISCOGS_SECRET}&query=${searchTerm}&type=master`).then(res => res.json());
+    console.log('result: ', result)
+    return {
+      type: c.SEARCH_ALBUMS_SUCCESS,
+      searchResults: result
+    }
+    
+  } catch (err) {
+    console.error(err);
+    return {
+      type: c.SEARCH_ALBUMS_FAILURE
+    }
   }
 }
 

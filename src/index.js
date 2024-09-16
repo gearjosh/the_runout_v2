@@ -10,7 +10,10 @@ import './styles/index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const store = configureStore({reducer: rootReducer});
+const store = configureStore({
+  reducer: rootReducer,
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware()
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
