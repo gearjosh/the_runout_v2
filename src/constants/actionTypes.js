@@ -1,6 +1,6 @@
-export const SELECT_ALBUM = 'select/album';
-export const TRIGGER_ALBUM_SEARCH = 'TRIGGER_ALBUM_SEARCH';
-export const SEARCHING_ALBUMS = "SEARCHING_ALBUMS";
-export const SEARCH_ALBUMS = "SEARCH_ALBUMS";
-export const SEARCH_ALBUMS_SUCCESS = "SEARCH_ALBUMS_SUCCESS";
-export const SEARCH_ALBUMS_FAILURE = "SEARCH_ALBUMS_FAILURE";
+// export const SELECT_ALBUM = 'select/album';
+// export const TRIGGER_ALBUM_SEARCH = '';
+export const SEARCHING_ALBUMS = 'albumSearch/pending';
+export const SEARCH_ALBUMS = 'albumSearch';
+export const SEARCH_ALBUMS_SUCCESS = 'albumSearch/fulfilled';
+export const SEARCH_ALBUMS_FAILURE = "albumSearch/rejected";

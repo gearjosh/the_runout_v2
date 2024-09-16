@@ -1,13 +1,12 @@
 import { combineReducers } from "@reduxjs/toolkit";
 import selectSlice from './selectSlice';
 import listenSlice from './listenSlice';
-// import albumSearchReducer from "./albumSearchReducer";
+import albumSearchSlice from "./albumSearchSlice";
 
 const rootReducer = combineReducers({
-  selectedAlbum: selectSlice,
+  selected: selectSlice,
   listens: listenSlice,
-  // searchResults: albumSearchReducer,
-  // isSearching: albumSearchReducer
+  albumSearch: albumSearchSlice
 });
 
 export default rootReducer;
