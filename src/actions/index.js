@@ -1,4 +1,4 @@
-import { createAsyncThunk, dispatch  } from '@reduxjs/toolkit';
+import { createAsyncThunk  } from '@reduxjs/toolkit';
 
 import constants from './../constants';
 const { c } = constants;
@@ -33,7 +33,7 @@ export const searchAlbums = createAsyncThunk(
 
       console.log("response: ", response);
 
-      dispatch(() => {
+      thunkAPI.dispatch(() => {
         return {
           type: 'albumSearch/fulfilled',
           searchResults: response
@@ -41,7 +41,7 @@ export const searchAlbums = createAsyncThunk(
       })
 
     } catch (err) {
-      dispatch(() => {
+      thunkAPI.dispatch(() => {
         return {
           type: "albumSearch/rejected",
         };

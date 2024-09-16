@@ -1,6 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { initialState } from "../constants";
+// import constants from "../constants";
+// const { initialState } = constants;
+const initialState = { album: 55625 };
 
 // const selectSlice = (state = initialState.selectedAlbum, action) => {
 //   switch (action.type) {
@@ -13,7 +15,7 @@ import { initialState } from "../constants";
 
 const selectSlice = createSlice({
   name: 'select',
-  selected: initialState.selected,
+  initialState,
   reducers: {
     album: (state, action) => { return { ...state, album: action.albumId }}
   }

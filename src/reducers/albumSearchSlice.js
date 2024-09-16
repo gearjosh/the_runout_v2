@@ -1,10 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { initialState } from "../constants";
+// import constants from "../constants";
+// const { initialState } = constants;
+const initialState = {
+  searchResults: null,
+  isSearching: false,
+  isAccepted: false,
+  isRejected: false,
+};
 
 const albumSearchSlice = createSlice({
   name: "albumSearch",
-  albumSearch: initialState.albumSearch,
+  initialState,
   reducers: {
     pending: (state) => {
       return { 
