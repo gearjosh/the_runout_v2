@@ -4,7 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 // const { initialState } = constants;
 const initialState = { album: 55625 };
 
-// const selectSlice = (state = initialState.selectedAlbum, action) => {
+// const selectSlice = (state = initialState.selected.album, action) => {
 //   switch (action.type) {
 //     case c.SELECT_ALBUM:
 //       return action.albumId;

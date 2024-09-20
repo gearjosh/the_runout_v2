@@ -16,10 +16,10 @@ export const searchingAlbums = () => {
 export const searchAlbums = createAsyncThunk(
   'albumSearch',
   async (searchTerm, thunkAPI) => {
-    console.log('searchTerm: ', searchTerm);
+    // console.log('searchTerm: ', searchTerm);
+    // console.log('REACT_APP_DISCOGS_KEY: ', process.env.REACT_APP_DISCOGS_KEY)
 
     thunkAPI.dispatch(searchingAlbums())
-
     try {
 
       const response = await fetch(

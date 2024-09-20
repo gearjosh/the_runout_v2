@@ -24,14 +24,14 @@ function ListenLog(props) {
         {smallListenArray.map((albumId) => {
           let album = props.listens[albumId];
           return <AlbumCoverWithInfo
-          albumId={albumId}
-          title={album.title}
-          artist={album.artist}
-          albumCover={album.albumCover}
-          firstListen={album.firstListen}
-          loggedAt={album.loggedAt}
-          releaseYear={album.releaseYear}
-          key={albumId} />
+            albumId={albumId}
+            title={album.title}
+            artist={album.artist}
+            albumCover={album.albumCover}
+            firstListen={album.firstListen}
+            loggedAt={album.loggedAt}
+            releaseYear={album.releaseYear}
+            key={albumId} />
         })}
         </div>
       </div>
