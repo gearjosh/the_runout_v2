@@ -3,7 +3,7 @@ import AlbumCover from './AlbumCover';
 import './styles/Homepage.scss';
 
 function Homepage(props) {
-  console.log('homepage props:', props);
+  // console.log('homepage props:', props);
   
   if (props.listens) {
     return (

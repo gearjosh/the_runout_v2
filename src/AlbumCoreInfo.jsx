@@ -3,7 +3,7 @@
 // import './styles/AlbumCoreInfo.scss';
 
 function AlbumCoreInfo(props) {
-  console.log(props);
+  // console.log(props);
   return (
     <div>
       <h1>{props.title}</h1>

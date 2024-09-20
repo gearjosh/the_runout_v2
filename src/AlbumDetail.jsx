@@ -11,7 +11,7 @@ import ActionMenu from './ActionMenu';
 import './styles/AlbumDetail.scss';
 
 function AlbumDetail(props) {
-  console.log('album detail props:',props);
+  // console.log('album detail props:',props);
   return (
     <div className="albumDetail">
       <div className="albumDetailHead">
