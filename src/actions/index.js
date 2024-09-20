@@ -1,8 +1,5 @@
 import { createAsyncThunk  } from '@reduxjs/toolkit';
 
-import constants from './../constants';
-const { c } = constants;
-
 export const selectAlbum = (id) => {
   return {
     type: 'select/album',
@@ -21,15 +18,14 @@ export const searchAlbums = createAsyncThunk(
   async (searchTerm, thunkAPI) => {
     console.log('searchTerm: ', searchTerm);
 
-    dispatch(searchingAlbums())
+    thunkAPI.dispatch(searchingAlbums())
 
     try {
 
       const response = await fetch(
-        `https://api.discogs.com/database/search?key=${process.env.DISCOGS_KEY}&secret=${process.env.DISCOGS_SECRET}&query=${searchTerm}&type=master`
+        `https://api.discogs.com/database/search?key=${process.env.REACT_APP_DISCOGS_KEY}&secret=${process.env.REACT_APP_DISCOGS_SECRET}&query=${searchTerm}&type=master`
       )
-        .then((res) => res.json())
-        .results.filter((thing) => thing.type === "master");
+        .then((res) => res.json()).results;
 
       console.log("response: ", response);
 
@@ -50,29 +46,3 @@ export const searchAlbums = createAsyncThunk(
     }
   }
 );
-
-// export const searchAlbums = async (searchTerm) => {
-//   console.log('searchTerm: ', searchTerm)
-//   let result;
-//   try {
-//     result = await fetch(`https://api.discogs.com/database/search?key=${process.env.DISCOGS_KEY}&secret=${process.env.DISCOGS_SECRET}&query=${searchTerm}&type=master`).then(res => res.json());
-//     console.log('result: ', result);
-//     return {
-//       type: c.SEARCH_ALBUMS_SUCCESS,
-//       searchResults: result
-//     };
-    
-//   } catch (err) {
-//     console.error(err);
-//     return {
-//       type: c.SEARCH_ALBUMS_FAILURE
-//     };
-//   }
-// };
-
-export const triggerAlbumSearch = (searchTerm) => {
-  return dispatch => {
-    dispatch(searchingAlbums())
-    dispatch(searchAlbums(searchTerm))
-  };
-};

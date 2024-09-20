@@ -1,23 +1,25 @@
 import { useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import Logo from './Logo';
 import MagnifyingGlass from './MagnifyingGlass'
 
 import './styles/Header.scss';
-import { triggerAlbumSearch } from './actions';
+import { searchAlbums } from './actions';
 
 function Header(props) {
   const searchInputRef = useRef('')
+  const navigate = useNavigate();
 
-  const handleNewAlbumSearch = (e) => {
-    const { dispatch } = props;
+  const useAlbumSearch = (e) => {
     e.preventDefault();
+    const { dispatch } = props;
     if (searchInputRef.current.value) {      
-      dispatch(triggerAlbumSearch(searchInputRef.current.value));
+      dispatch(searchAlbums(searchInputRef.current.value));
       searchInputRef.current.value = '';
     }
+    navigate("/searchresults");
   }
   
 
@@ -29,7 +31,7 @@ function Header(props) {
           <Logo />
         </Link>
         <p id="because">Every album deserves a listen.</p>
-        <form onSubmit={handleNewAlbumSearch} id="searchForm" className="search">
+        <form onSubmit={useAlbumSearch} id="searchForm" className="search">
           <input
             placeholder="Search albums..."
             ref={searchInputRef}
