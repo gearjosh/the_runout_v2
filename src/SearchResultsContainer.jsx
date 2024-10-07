@@ -8,43 +8,33 @@ function SearchResultsContainer(props) {
   
   //everything having to do with createSleepArray is for demo purposes only and needs to go. replace with real code that does real things
   // start here >
-  if (props.listens) {
-    let bigListenArray = Object.keys(props.listens);
-  
-    let sleepArray = [];
-  
-    const createSleepArray = () => {
-      bigListenArray.forEach((albumId) => {
-        if (props.listens[albumId].artist === 'Sleep') {
-          sleepArray.push(albumId);
-        }
-      });
-    }
-  
-    createSleepArray();
-  
+  if (props.albumSearch.searchResults.results) {
+    const results = props.albumSearch.searchResults.results;
+
     return (
-        <div className="searchContainer">
-          {sleepArray.map((albumId) => {
-            let album = props.listens[albumId];
-            return <AlbumCoverWithInfo
-              albumId={albumId}
+      <div className="searchContainer">
+        {results.map((album) => {
+          return (
+            <AlbumCoverWithInfo
+              albumId={album.id}
               title={album.title}
               artist={album.artist}
               albumCover={album.albumCover}
               firstListen={album.firstListen}
               loggedAt={album.loggedAt}
               releaseYear={album.releaseYear}
-              key={albumId} />
-          })}
-        </div>
+              key={album.id}
+            />
+          );
+        })}
+      </div>
     );
   } else {
     return (
-      <div className='searchContainer'>
+      <div className="searchContainer">
         <p>Loading...</p>
       </div>
-    )
+    );
   }
 };
 // < end here

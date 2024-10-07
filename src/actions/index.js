@@ -25,14 +25,14 @@ export const searchAlbums = createAsyncThunk(
       const response = await fetch(
         `https://api.discogs.com/database/search?key=${process.env.REACT_APP_DISCOGS_KEY}&secret=${process.env.REACT_APP_DISCOGS_SECRET}&query=${searchTerm}&type=master`
       )
-        .then((res) => res.json()).results;
+      const results = response.json();
 
-      console.log("response: ", response);
+      console.log("discogs results: ", results);
 
       thunkAPI.dispatch(() => {
         return {
           type: 'albumSearch/fulfilled',
-          searchResults: response
+          searchResults: results.results
         }
       })
 
