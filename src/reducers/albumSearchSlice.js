@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 // import constants from "../constants";
 // const { initialState } = constants;
 const initialState = {
-  searchResults: null,
+  searchResults: {},
   isSearching: false,
   isAccepted: false,
   isRejected: false,
@@ -16,7 +16,7 @@ const albumSearchSlice = createSlice({
     pending: (state) => {
       return { 
         ...state, 
-        searchResults: null,
+        searchResults: {},
         isSearching: true, 
         isRejected: false, 
         isAccepted: false 
