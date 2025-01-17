@@ -1,4 +1,4 @@
-import { createAsyncThunk  } from '@reduxjs/toolkit';
+// import { createAsyncThunk  } from '@reduxjs/toolkit';
 
 export const selectAlbum = (id) => {
   return {
@@ -7,42 +7,49 @@ export const selectAlbum = (id) => {
   };
 };
 
-export const searchingAlbums = () => {
-  return {
-    type: 'albumSearch/pending'
-  };
-};
+// export const searchingAlbums = () => {
+//   console.log('searching');
+  
+//   return {
+//     type: 'albumSearch/pending'
+//   };
+// };
 
-export const searchAlbums = createAsyncThunk(
-  'albumSearch',
-  async (searchTerm, thunkAPI) => {
-    // console.log('searchTerm: ', searchTerm);
-    // console.log('REACT_APP_DISCOGS_KEY: ', process.env.REACT_APP_DISCOGS_KEY)
+// export const albumSearch = createAsyncThunk(
+//   'albumSearch/fetchAlbums',
+//   async (searchTerm, thunkAPI) => {
 
-    thunkAPI.dispatch(searchingAlbums())
-    try {
+//     thunkAPI.dispatch(searchingAlbums())
+    
+//     fetch(
+//       `https://api.discogs.com/database/search?key=${process.env.REACT_APP_DISCOGS_KEY}&secret=${process.env.REACT_APP_DISCOGS_SECRET}&query=${searchTerm}&type=master`,
+//       {
+//         headers: {
+//           "User-Agent": "The Runout - Social Media for Music 0.1 https://github.com/gearjosh/the_runout_v2",
+//         },
+//       }
+//     )
+//     .then(response => response.json())
+//     .then(
+//       (json) => {
+//         console.log("json: ", json);
 
-      const response = await fetch(
-        `https://api.discogs.com/database/search?key=${process.env.REACT_APP_DISCOGS_KEY}&secret=${process.env.REACT_APP_DISCOGS_SECRET}&query=${searchTerm}&type=master`
-      )
-      const results = response.json();
+//         thunkAPI.dispatch(() => {          
+//           return {
+//             type: "albumSearch/fulfilled",
+//             searchResults: json,
+//           }
+//         });
+//       },
+//       (error) => {
+//         console.log("error: ", error);
 
-      console.log("discogs results: ", results);
-
-      thunkAPI.dispatch(() => {
-        return {
-          type: 'albumSearch/fulfilled',
-          searchResults: results.results
-        }
-      })
-
-    } catch (err) {
-      thunkAPI.dispatch(() => {
-        return {
-          type: "albumSearch/rejected",
-        };
-      });
-      console.error(err);
-    }
-  }
-);
+//         thunkAPI.dispatch(() => {
+//           return {
+//             type: "albumSearch/rejected",
+//           };
+//         });
+//       }
+//     );
+//   }
+// )

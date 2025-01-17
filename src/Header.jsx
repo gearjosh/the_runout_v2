@@ -6,7 +6,7 @@ import Logo from './Logo';
 import MagnifyingGlass from './MagnifyingGlass'
 
 import './styles/Header.scss';
-import { searchAlbums } from './actions';
+import { fetchAlbums } from './reducers/albumSearchSlice.js';
 
 function Header(props) {
   const searchInputRef = useRef('')
@@ -16,11 +16,12 @@ function Header(props) {
     e.preventDefault();
     const { dispatch } = props;
     if (searchInputRef.current.value) {      
-      dispatch(searchAlbums(searchInputRef.current.value));
-      searchInputRef.current.value = '';
+      dispatch(fetchAlbums(searchInputRef.current.value)).then(() => {
+        searchInputRef.current.value = '';
+        navigate("/searchresults");
+      });
     }
-    navigate("/searchresults");
-  }
+  };
   
 
 
