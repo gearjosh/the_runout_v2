@@ -18,10 +18,10 @@ function SearchResultsContainer(props) {
                 albumId={album.id}
                 title={album.title}
                 artist={album.artist}
-                albumCover={album.albumCover}
-                firstListen={album.firstListen}
-                loggedAt={album.loggedAt}
-                releaseYear={album.releaseYear}
+                albumCover={album.cover_image}
+                // firstListen={album.firstListen}
+                // loggedAt={album.loggedAt}
+                releaseYear={album.year}
                 key={album.id}
               />
             );
