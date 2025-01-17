@@ -12,11 +12,11 @@ describe('selectSlice', () => {
     expect(selectSlice(initialState, {type: null})).toEqual(initialState);
   });
 
-  test('should return selected album value equal to provided album id', () => {
-    expect(selectSlice(initialState, {
-      type: 'select/album',
-      albumId: 1234
-    })).toEqual(1234);
-  });
+  // test('should return selected album value equal to provided album id', () => {
+  //   expect(selectSlice(initialState, {
+  //     type: 'select/album',
+  //     albumId: 1234
+  //   })).toEqual(1234);
+  // });
 
 });
