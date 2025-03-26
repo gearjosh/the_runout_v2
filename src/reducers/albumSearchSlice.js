@@ -7,35 +7,55 @@ const initialState = {
 };
 
 export const fetchAlbums = createAsyncThunk(
-  'albumSearch/fetchAlbums',
+  "albumSearch/fetchAlbums",
   async (searchTerm, thunkAPI) => {
     const response = await fetch(
-      `https://api.discogs.com/database/search?key=${process.env.REACT_APP_DISCOGS_KEY}&secret=${process.env.REACT_APP_DISCOGS_SECRET}&query=${searchTerm}&type=master`
+      `http://ws.audioscrobbler.com/2.0/?method=album.search&album=${searchTerm}&api_key=${process.env.REACT_APP_LASTFM_KEY}&format=json`
     );
-    console.log('response: ', response)
+    console.log("response: ", response);
     return response.json();
   }
-)
+);
+
+// export const fetchAlbums = createAsyncThunk(
+//   "albumSearch/fetchAlbums",
+//   async (searchTerm, thunkAPI) => {
+//     const response = await fetch(
+//       `https://api.discogs.com/database/search?key=${process.env.REACT_APP_DISCOGS_KEY}&secret=${process.env.REACT_APP_DISCOGS_SECRET}&query=${searchTerm}&type=master`
+//     );
+//     console.log("response: ", response);
+//     return response.json();
+//   }
+// );
+
+// export const fetchMoreAlbumInfo = createAsyncThunk(
+//   "albumSearch/fetchMoreAlbumInfo",
+//   async (albumId, thunkAPI) => {
+//     const response = await fetch(``);
+//     console.log("response: ", response);
+//     return response.json();
+//   }
+// );
 
 const albumSearchSlice = createSlice({
   name: "albumSearch",
   initialState,
   reducers: {},
-  extraReducers: builder => {
+  extraReducers: (builder) => {
     builder
-      .addCase(fetchAlbums.pending, state => {
+      .addCase(fetchAlbums.pending, (state) => {
         state.isSearching = true;
         state.error = null;
       })
       .addCase(fetchAlbums.fulfilled, (state, action) => {
         state.isSearching = false;
-        state.searchResults = action.payload['results'];
+        state.searchResults = action.payload["results"]["albummatches"]["album"];
       })
       .addCase(fetchAlbums.rejected, (state, action) => {
         state.isSearching = false;
         state.error = action.error.message;
       });
-  }
+  },
 });
 
 export default albumSearchSlice.reducer;

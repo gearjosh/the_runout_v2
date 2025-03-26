@@ -1,4 +1,5 @@
 import AlbumCoverWithInfo from './AlbumCoverWithInfo';
+import napoleon from './img/napoleon.png';
 
 import './styles/SearchResultsContainer.scss';
 
@@ -8,6 +9,7 @@ function SearchResultsContainer(props) {
   
   // start here >
     const search = props.albumSearch;
+    
 
     if (search.searchResults && search.searchResults.length > 0) {
       return (
@@ -15,14 +17,14 @@ function SearchResultsContainer(props) {
           {search.searchResults.map((album) => {
             return (
               <AlbumCoverWithInfo
-                albumId={album.id}
-                title={album.title.split(" - ")[1]}
-                artist={album.title.split(" - ")[0]}
-                albumCover={album.cover_image}
+                albumId={album.mbid}
+                title={album.name}
+                artist={album.artist}
+                albumCover={album.image[2]["#text"] || napoleon}
                 // firstListen={album.firstListen}
                 // loggedAt={album.loggedAt}
-                releaseYear={album.year}
-                key={album.id}
+                // releaseYear={album.year}
+                key={album.mbid}
               />
             );
           })}
