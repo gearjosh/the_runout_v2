@@ -1,12 +1,18 @@
-
-
 import AlbumCover from './AlbumCover';
+import { selectAlbum } from "./actions";
+import { connect } from "react-redux";
 
 import './styles/AlbumCoverWithInfo.scss';
 
 function AlbumCoverWithInfo(props) {
+
+  function handleNewAlbumSelection(id, cover, artist, year, title) {
+    const { dispatch } = props;
+    dispatch(selectAlbum(id, cover, artist, year, title));
+  }
+  
   return (
-    <div className="albumCoverWithInfo">
+    <div className="albumCoverWithInfo" onClick={() => {handleNewAlbumSelection(props.albumId, props.albumCover, props.artist, props.releaseYear, props.title)}}>
       <AlbumCover
         albumId={props.albumId}
         albumCover={props.albumCover}
@@ -23,4 +29,4 @@ function AlbumCoverWithInfo(props) {
   );
 };
 
-export default AlbumCoverWithInfo;
+export default connect()(AlbumCoverWithInfo);

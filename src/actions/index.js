@@ -1,9 +1,13 @@
 // import { createAsyncThunk  } from '@reduxjs/toolkit';
 
-export const selectAlbum = (id) => {
+export const selectAlbum = (id, coverImg, artist, year, title) => {
   return {
     type: 'select/album',
-    albumId: id
+    albumId: id,
+    albumCover: coverImg,
+    artist: artist,
+    releaseYear: year,
+    title: title,
   };
 };
 

@@ -24,7 +24,7 @@ class App extends Component {
         <Routes>
           <Route path="/" element={<Homepage listens={this.props.listens} />} />
           <Route path="/searchresults" element={<SearchResultsContainer albumSearch={this.props.albumSearch} listens={this.props.listens} />} />
-          <Route path="/albumdetail" element={<AlbumDetail selectedAlbum={this.props.selected.album}
+          <Route path="/albumdetail" element={<AlbumDetail selectedAlbum={this.props.selected}
           listens={this.props.listens} />} />
           <Route path="/profile" element={<ProfileContainer listens={this.props.listens} />} />
         </Routes>

@@ -12,20 +12,22 @@ import './styles/AlbumDetail.scss';
 
 function AlbumDetail(props) {
   // console.log('album detail props:',props);
+
+  // rework this to not use listens
   return (
     <div className="albumDetail">
       <div className="albumDetailHead">
         <AlbumCover
-          albumId={props.selectedAlbum}
-          albumCover={props.listens[props.selectedAlbum].albumCover}
-          firstListen={props.listens[props.selectedAlbum].firstListen}
-          loggedAt={props.listens[props.selectedAlbum].loggedAt}
+          albumId={props.selectedAlbum.album}
+          albumCover={props.selectedAlbum.albumCover}
+          firstListen={props.selectedAlbum.firstListen}
+          loggedAt={props.selectedAlbum.loggedAt}
           className="detailHeadElement"/>
         <div className="detailHeadElement">
           <AlbumCoreInfo
-            title={props.listens[props.selectedAlbum].title}
-            artist={props.listens[props.selectedAlbum].artist}
-            releaseYear={props.listens[props.selectedAlbum].releaseYear}/>
+            title={props.selectedAlbum.title}
+            artist={props.selectedAlbum.artist}
+            releaseYear={props.selectedAlbum.releaseYear}/>
           <GenreTags/>
           <BandMembers/>
         </div>

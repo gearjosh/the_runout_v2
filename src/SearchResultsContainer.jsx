@@ -16,8 +16,8 @@ function SearchResultsContainer(props) {
             return (
               <AlbumCoverWithInfo
                 albumId={album.id}
-                title={album.title}
-                artist={album.artist}
+                title={album.title.split(" - ")[1]}
+                artist={album.title.split(" - ")[0]}
                 albumCover={album.cover_image}
                 // firstListen={album.firstListen}
                 // loggedAt={album.loggedAt}

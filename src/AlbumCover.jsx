@@ -1,21 +1,14 @@
-
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { selectAlbum } from './actions';
+
 
 // import dopesmoker from './img/dopesmoker.jpg';
 
 import './styles/AlbumCover.scss';
 
 function AlbumCover(props) {
-
-  function handleNewAlbumSelection(idOfAlbum) {
-    const { dispatch } = props;
-    dispatch(selectAlbum(idOfAlbum));
-  }
   const altText = "the album cover art for " + props.title + " by " + props.artist;
   return (
-    <div className="albumCover" onClick={() => {handleNewAlbumSelection(props.albumId)}}>
+    <div className="albumCover" >
       <Link to="/albumdetail">
         <img src={props.albumCover} alt={altText}></img>
       </Link>
@@ -23,4 +16,4 @@ function AlbumCover(props) {
   );
 };
 
-export default connect()(AlbumCover);
+export default AlbumCover;
