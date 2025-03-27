@@ -30,7 +30,7 @@ function ListenLog(props) {
             albumCover={album.albumCover}
             firstListen={album.firstListen}
             loggedAt={album.loggedAt}
-            releaseYear={album.releaseYear}
+            releaseDate={album.releaseDate}
             key={albumId} />
         })}
         </div>

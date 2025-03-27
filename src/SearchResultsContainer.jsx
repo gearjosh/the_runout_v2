@@ -15,18 +15,22 @@ function SearchResultsContainer(props) {
       return (
         <div className="searchContainer">
           {search.searchResults.map((album) => {
-            return (
-              <AlbumCoverWithInfo
-                albumId={album.mbid}
-                title={album.name}
-                artist={album.artist}
-                albumCover={album.image[2]["#text"] || napoleon}
-                // firstListen={album.firstListen}
-                // loggedAt={album.loggedAt}
-                // releaseYear={album.year}
-                key={album.mbid}
-              />
-            );
+            if (album.mbid) {
+              return (
+                <AlbumCoverWithInfo
+                  albumId={album.mbid}
+                  title={album.name}
+                  artist={album.artist}
+                  albumCover={album.image[2]["#text"] || napoleon}
+                  // firstListen={album.firstListen}
+                  // loggedAt={album.loggedAt}
+                  // releaseDate={album.year}
+                  key={album.mbid}
+                />
+              );
+            } else {
+              return null;
+            }
           })}
         </div>
       );

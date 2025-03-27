@@ -12,7 +12,7 @@ function Header(props) {
   const searchInputRef = useRef('')
   const navigate = useNavigate();
 
-  const useAlbumSearch = (e) => {
+  const handleAlbumSearch = (e) => {
     e.preventDefault();
     const { dispatch } = props;
     if (searchInputRef.current.value) {      
@@ -32,7 +32,7 @@ function Header(props) {
           <Logo />
         </Link>
         <p id="because">Every album deserves a listen.</p>
-        <form onSubmit={useAlbumSearch} id="searchForm" className="search">
+        <form onSubmit={handleAlbumSearch} id="searchForm" className="search">
           <input
             placeholder="Search albums..."
             ref={searchInputRef}

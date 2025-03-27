@@ -8,7 +8,7 @@ function AlbumCoreInfo(props) {
     <div>
       <h1>{props.title}</h1>
       <h2>by {props.artist}</h2>
-      <h3><em>Released {props.releaseYear}</em></h3>
+      <h3><em>Released {props.releaseDate}</em></h3>
     </div>
   );
 };

@@ -11,23 +11,25 @@ import ActionMenu from './ActionMenu';
 import './styles/AlbumDetail.scss';
 
 function AlbumDetail(props) {
-  // console.log('album detail props:',props);
+  console.log('album detail props:',props);
+  const info = props.albumInfo
 
   // rework this to not use listens
   return (
     <div className="albumDetail">
       <div className="albumDetailHead">
         <AlbumCover
-          albumId={props.selectedAlbum.album}
-          albumCover={props.selectedAlbum.albumCover}
-          firstListen={props.selectedAlbum.firstListen}
-          loggedAt={props.selectedAlbum.loggedAt}
+          albumId={props.id}
+          albumCover={info.image[3]["#text"]}
+          // firstListen={info.firstListen}
+          // loggedAt={info.loggedAt}
           className="detailHeadElement"/>
         <div className="detailHeadElement">
           <AlbumCoreInfo
-            title={props.selectedAlbum.title}
-            artist={props.selectedAlbum.artist}
-            releaseYear={props.selectedAlbum.releaseYear}/>
+            title={info.name}
+            artist={info.artist}
+            releaseDate={info.wiki.published.split(",")[0]}
+            />
           <GenreTags/>
           <BandMembers/>
         </div>

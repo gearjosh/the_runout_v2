@@ -1,18 +1,23 @@
 import AlbumCover from './AlbumCover';
-import { selectAlbum } from "./actions";
+import { selectAlbum } from "./reducers/selectSlice.js";
+
 import { connect } from "react-redux";
 
 import './styles/AlbumCoverWithInfo.scss';
+import { fetchAlbumInfo } from "./reducers/albumInfoSlice.js";
+import { useNavigate } from 'react-router-dom';
 
 function AlbumCoverWithInfo(props) {
+  const navigate = useNavigate()
 
-  function handleNewAlbumSelection(id, cover, artist, year, title) {
+  function handleNewAlbumSelection(id) {
     const { dispatch } = props;
-    dispatch(selectAlbum(id, cover, artist, year, title));
+    dispatch(selectAlbum(id));
+    dispatch(fetchAlbumInfo(id)).then(() => navigate("/albumdetail"))
   }
-  
+
   return (
-    <div className="albumCoverWithInfo" onClick={() => {handleNewAlbumSelection(props.albumId, props.albumCover, props.artist, props.releaseYear, props.title)}}>
+    <div className="albumCoverWithInfo" onClick={() => {handleNewAlbumSelection(props.albumId)}}>
       <AlbumCover
         albumId={props.albumId}
         albumCover={props.albumCover}
@@ -21,8 +26,6 @@ function AlbumCoverWithInfo(props) {
         <ul>
           <li className="boldPText">{props.title}</li>
           <li>by {props.artist}</li>
-          <br/>
-          <li><em>Released {props.releaseYear}</em></li>
         </ul>
       </div>
     </div>

@@ -24,8 +24,8 @@ class App extends Component {
         <Routes>
           <Route path="/" element={<Homepage listens={this.props.listens} />} />
           <Route path="/searchresults" element={<SearchResultsContainer albumSearch={this.props.albumSearch} listens={this.props.listens} />} />
-          <Route path="/albumdetail" element={<AlbumDetail selectedAlbum={this.props.selected}
-          listens={this.props.listens} />} />
+          <Route path="/albumdetail" element={<AlbumDetail albumInfo={this.props.albumInfo.info}
+          id={this.props.selected} />} />
           <Route path="/profile" element={<ProfileContainer listens={this.props.listens} />} />
         </Routes>
       </div>
@@ -37,7 +37,8 @@ const mapStateToProps = (state) => {
   return {
     selected: state.selected,
     listens: state.listens,
-    albumSearch: state.albumSearch
+    albumSearch: state.albumSearch,
+    albumInfo: state.albumInfo,
   };
 };
 

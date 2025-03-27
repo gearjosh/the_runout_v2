@@ -6,7 +6,7 @@ export const selectAlbum = (id, coverImg, artist, year, title) => {
     albumId: id,
     albumCover: coverImg,
     artist: artist,
-    releaseYear: year,
+    releaseDate: year,
     title: title,
   };
 };

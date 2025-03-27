@@ -2,11 +2,18 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {};
 
+export const selectAlbum = (id) => {
+  return {
+    type: 'select/album',
+    albumId: id,
+  };
+};
+
 const selectSlice = createSlice({
   name: 'select',
   initialState,
   reducers: {
-    album: (state, action) => { return { ...state, albumId: action.albumId, albumCover: action.albumCover, artist: action.artist, releaseYear: action.releaseYear, title: action.title }}
+    album: (state, action) => { return { ...state, albumId: action.albumId }}
   }
 })
 

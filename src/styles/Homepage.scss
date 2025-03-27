@@ -4,7 +4,7 @@
 .albumGrid {
   display: grid;
   padding: .25rem;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
   grid-auto-rows: 1fr;
   grid-auto-flow: dense;
   grid-gap: .25rem;
