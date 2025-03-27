@@ -8,7 +8,7 @@ function TrackList(props) {
     <div className="trackList">
       <h3>Track List</h3>
       <ol>
-        {props.tracks.map((track, i) => <li key={i}>{track.name}</li>)}
+        {props.tracks.map((track,) => <li key={track.name}>{track.name}</li>)}
       </ol>
     </div>
   );

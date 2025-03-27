@@ -1,9 +1,7 @@
-
-
 import AlbumCover from './AlbumCover';
 import AlbumCoreInfo from './AlbumCoreInfo';
 import GenreTags from './GenreTags';
-import BandMembers from './BandMembers';
+// import BandMembers from './BandMembers';
 import TrackList from './TrackList';
 import ActionMenu from './ActionMenu';
 // import AlbumCover4 from './AlbumCover4';
@@ -42,7 +40,7 @@ function AlbumDetail(props) {
           <ActionMenu />
         </div>
       </div>
-      <div className="albumDetailBody"></div>
+      <div className="albumDetailBody">{info.wiki.summary.split("<a")[0]}</div>
     </div>
   );
 };
