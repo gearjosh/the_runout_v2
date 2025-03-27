@@ -5,7 +5,7 @@ function AlbumCover(props) {
   const altText = "the album cover art for " + props.title + " by " + props.artist;
   return (
     <div className="albumCover" >
-      <img src={props.albumCover ||} alt={altText}></img>
+      <img src={props.albumCover || napoleon} alt={altText}></img>
     </div>
   );
 };
