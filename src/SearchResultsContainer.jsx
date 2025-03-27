@@ -1,5 +1,5 @@
 import AlbumCoverWithInfo from './AlbumCoverWithInfo';
-import napoleon from './img/napoleon.png';
+
 
 import './styles/SearchResultsContainer.scss';
 
@@ -21,7 +21,7 @@ function SearchResultsContainer(props) {
                   albumId={album.mbid}
                   title={album.name}
                   artist={album.artist}
-                  albumCover={album.image[2]["#text"] || napoleon}
+                  albumCover={album.image[2]["#text"]}
                   key={album.mbid}
                 />
               );

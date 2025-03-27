@@ -25,6 +25,7 @@ function AlbumCoverWithInfo(props) {
       <div className="albumInfoBox">
         <ul>
           <li className="boldPText">{props.title}</li>
+          <br/>
           <li>by {props.artist}</li>
         </ul>
       </div>
