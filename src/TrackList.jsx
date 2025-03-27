@@ -2,20 +2,13 @@
 
 // import './styles/TrackList.scss';
 
-function TrackList() {
+function TrackList(props) {
+
   return (
     <div className="trackList">
       <h3>Track List</h3>
       <ol>
-        <li>[Track Name]</li>
-        <li>[Track Name]</li>
-        <li>[Track Name]</li>
-        <li>[Track Name]</li>
-        <li>[Track Name]</li>
-        <li>[Track Name]</li>
-        <li>[Track Name]</li>
-        <li>[Track Name]</li>
-        <li>[Track Name]</li>
+        {props.tracks.map((track, i) => <li key={i}>{track.name}</li>)}
       </ol>
     </div>
   );

@@ -33,10 +33,10 @@ function AlbumDetail(props) {
           />
           <GenreTags 
             tags={info.tags.tag} />
-          <BandMembers />
+          {/* <BandMembers /> */}
         </div>
         <div className="detailHeadElement">
-          <TrackList />
+          <TrackList tracks={info.tracks.track} />
         </div>
         <div className="detailHeadElement">
           <ActionMenu />
