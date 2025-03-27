@@ -1,14 +1,14 @@
 
-
 import './styles/GenreTags.scss';
 
-function GenreTags() {
+function GenreTags(props) {
   return (
     <div>
-      <span className="genreTag unselectable">Stoner Metal</span>
-      <span className="genreTag unselectable">Hip-Hop</span>
-      <span className="genreTag unselectable">Soul</span>
-      <button className="genreTag unselectable addGenreButton">+</button>
+      {props.tags.map((tag) => (
+        <span className="genreTag unselectable">{tag.name}</span>
+      ))}
+
+      {/* <button className="genreTag unselectable addGenreButton">+</button> */}
     </div>
   );
 };

@@ -10,3 +10,16 @@
     transform: scale(1.1);
   }
 }
+
+.genreTag {
+  background-color: $darkGreen;
+  display: inline-block;
+  border-radius: .25rem;
+  padding: .5rem;
+  // padding-bottom: .25rem;
+  font-family: 'Berlin Bold';
+  font-size: .75rem;
+  line-height: .5rem;
+  color: $lightBlack;
+  margin: 0 .5rem .5rem 0;
+}

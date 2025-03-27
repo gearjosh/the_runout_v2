@@ -21,28 +21,28 @@ function AlbumDetail(props) {
         <AlbumCover
           albumId={props.id}
           albumCover={info.image[3]["#text"]}
-          // firstListen={info.firstListen}
-          // loggedAt={info.loggedAt}
-          className="detailHeadElement"/>
+          title={info.name}
+          artist={info.artist}
+          className="detailHeadElement"
+        />
         <div className="detailHeadElement">
           <AlbumCoreInfo
             title={info.name}
             artist={info.artist}
             releaseDate={info.wiki.published.split(",")[0]}
-            />
-          <GenreTags/>
-          <BandMembers/>
+          />
+          <GenreTags 
+            tags={info.tags.tag} />
+          <BandMembers />
         </div>
         <div className="detailHeadElement">
-          <TrackList/>
+          <TrackList />
         </div>
         <div className="detailHeadElement">
-          <ActionMenu/>
+          <ActionMenu />
         </div>
       </div>
-      <div className="albumDetailBody">
-
-      </div>
+      <div className="albumDetailBody"></div>
     </div>
   );
 };

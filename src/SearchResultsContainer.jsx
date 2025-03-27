@@ -22,9 +22,6 @@ function SearchResultsContainer(props) {
                   title={album.name}
                   artist={album.artist}
                   albumCover={album.image[2]["#text"] || napoleon}
-                  // firstListen={album.firstListen}
-                  // loggedAt={album.loggedAt}
-                  // releaseDate={album.year}
                   key={album.mbid}
                 />
               );
