@@ -62,16 +62,13 @@ See the screenshots below and take a look at [capstone-planning.sketch](https://
 on search submit return search data in SearchResult
 
 to do:
-- ~~get discogs creds documented~~
-- ~~create discogsApiCall function~~
-- ~~get discogsApiCall to return:~~
+- ~~get lastFM creds documented~~
+- ~~create lastFMApiCall function~~
+- ~~get lastFMApiCall to return:~~
   - ~~search results for that album~~
   - ~~search results for that artist~~
-- create test for future reducer to fail
-- create action creator to supply arguments to discogsApiCall function
-- create middleware to handle api call
-- create reducer to update state with search results
-- populate SearchResultsContainer with results
+- [ ] artist detail page/route
+
 
 <!-- ### Specs -->
 

@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import Header from "./Header";
 import SearchResultsContainer from "./SearchResultsContainer";
 import AlbumDetail from "./AlbumDetail";
+import ArtistDetail from "./ArtistDetail";
 import ProfileContainer from "./ProfileContainer";
 import Homepage from "./Homepage";
 
@@ -23,10 +24,36 @@ class App extends Component {
         <Header />
         <Routes>
           <Route path="/" element={<Homepage listens={this.props.listens} />} />
-          <Route path="/searchresults" element={<SearchResultsContainer albumSearch={this.props.albumSearch} listens={this.props.listens} />} />
-          <Route path="/albumdetail" element={<AlbumDetail albumInfo={this.props.albumInfo.info}
-          id={this.props.selected} />} />
-          <Route path="/profile" element={<ProfileContainer listens={this.props.listens} />} />
+          <Route
+            path="/searchresults"
+            element={
+              <SearchResultsContainer
+                albumSearch={this.props.albumSearch}
+                listens={this.props.listens}
+              />
+            }
+          />
+          <Route
+            path="/albumdetail"
+            element={
+              <AlbumDetail
+                albumInfo={this.props.albumInfo.info}
+                id={this.props.selected}
+              />
+            }
+          />
+          <Route 
+            path="/artistdetail" 
+            element={
+              <ArtistDetail 
+                artistInfo={this.props.artistInfo.info}
+              />
+            }
+          />
+          <Route
+            path="/profile"
+            element={<ProfileContainer listens={this.props.listens} />}
+          />
         </Routes>
       </div>
     );
@@ -39,6 +66,7 @@ const mapStateToProps = (state) => {
     listens: state.listens,
     albumSearch: state.albumSearch,
     albumInfo: state.albumInfo,
+    artistInfo: state.artistInfo,
   };
 };
 

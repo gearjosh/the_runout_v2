@@ -18,7 +18,14 @@ function AlbumDetail(props) {
       <div className="albumDetailHead">
         <AlbumCover
           albumId={props.id}
-          albumCover={info.image[3]["#text"]}
+          albumCover={
+            info.image[5]["#text"] ||
+            info.image[4]["#text"] ||
+            info.image[3]["#text"] ||
+            info.image[2]["#text"] ||
+            info.image[1]["#text"] ||
+            null
+          }
           title={info.name}
           artist={info.artist}
           className="detailHeadElement"
@@ -29,8 +36,7 @@ function AlbumDetail(props) {
             artist={info.artist}
             releaseDate={info.wiki.published.split(",")[0]}
           />
-          <GenreTags 
-            tags={info.tags.tag} />
+          <GenreTags tags={info.tags.tag} />
           {/* <BandMembers /> */}
         </div>
         <div className="detailHeadElement">
